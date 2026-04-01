@@ -1,0 +1,51 @@
+&cntrl
+  imin=0,
+  ntx=5,
+  irest=1,
+  nstlim=50000000,
+  dt=0.002,
+  ntf=2,
+  ntc=2,
+  temp0=300.0,
+  ntpr=5000,
+  ntwx=5000,
+  ntwr=500000,
+  cut=10.0,
+  ntb=2,
+  ntp=1,
+  barostat=2,
+  pres0=1.0,
+  taup=2.0,
+  ntt=3,
+  gamma_ln=2.0,
+  ig=-1,
+  ntr=0,
+  ntxo=2,
+  ioutfm=1,
+ /
+
+# nstlim=50000000
+#   50 million steps x 0.002 ps = 100 ns production
+#
+# ntpr=5000
+#   Print energy every 5000 steps = every 10 ps
+#
+# ntwx=5000
+#   Write trajectory every 5000 steps = every 10 ps
+#   Total frames = 10000 frames for analysis
+#
+# ntwr=500000
+#   Write restart every 500000 steps = every 1 ns
+#   Allows recovery if simulation crashes
+#
+# ntr=0
+#   No restraints - completely free simulation
+#   Ligand and protein move freely
+#
+# barostat=2
+#   Monte Carlo barostat for production
+#   More accurate than Berendsen for long simulations
+#
+# Input  : equil4.rst
+# Output : prod.nc (trajectory for analysis)
+EOF

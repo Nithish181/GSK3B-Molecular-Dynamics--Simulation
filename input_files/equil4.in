@@ -1,0 +1,45 @@
+ &cntrl
+  imin=0,
+  ntx=5,
+  irest=1,
+  nstlim=500000,
+  dt=0.002,
+  ntf=2,
+  ntc=2,
+  temp0=300.0,
+  ntpr=500,
+  ntwx=500,
+  ntwr=5000,
+  cut=10.0,
+  ntb=2,
+  ntp=1,
+  barostat=2,
+  pres0=1.0,
+  taup=2.0,
+  ntt=3,
+  gamma_ln=2.0,
+  ig=-1,
+  ntxo=2,
+  ioutfm=1,
+  ntr=0,
+ /
+
+# nstlim=500000
+#   1 ns free equilibration
+#   Longer than previous stages because
+#   system needs time to fully relax without restraints
+#
+# ntr=0
+#   NO restraints - protein and ligand completely free
+#   Critical test before production
+#   If ligand stays in pocket here it will stay
+#   during entire 100 ns production
+#
+# barostat=2
+#   Switch back to Monte Carlo barostat
+#   Safe to use now because no restraints present
+#   Monte Carlo is more accurate for production-like runs
+#
+# Input  : equil3.rst
+# Output : equil4.rst
+EOF

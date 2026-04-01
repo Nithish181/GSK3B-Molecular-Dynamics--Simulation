@@ -1,0 +1,75 @@
+&cntrl
+  imin=1,
+  maxcyc=5000,
+  ncyc=2500,
+  ntb=1,
+  ntp=0,
+  ntf=1,
+  ntc=1,
+  cut=10.0,
+  ntpr=100,
+  ntxo=1,
+  ntr=1,
+  restraint_wt=10.0,
+  restraintmask='@CA,C,N,O | :703',
+ /
+
+# -------------------------------------------------------
+# PARAMETER EXPLANATION
+# -------------------------------------------------------
+# imin=1
+#   Perform energy minimization (not MD)
+#
+# maxcyc=5000
+#   Maximum 5000 minimization cycles total
+#
+# ncyc=2500
+#   First 2500 cycles use steepest descent method
+#   Steepest descent is robust for removing bad clashes
+#   Remaining 2500 cycles use conjugate gradient method
+#   Conjugate gradient is more efficient near energy minimum
+#
+# ntb=1
+#   Periodic boundary conditions at constant volume
+#   Required during minimization before pressure coupling
+#
+# ntp=0
+#   No pressure scaling during minimization
+#   Pressure control only used during MD not minimization
+#
+# ntf=1
+#   Calculate forces for ALL bonds including hydrogen
+#   Important during minimization to properly relax H atoms
+#
+# ntc=1
+#   No SHAKE constraint during minimization
+#   All bond lengths are free to change during minimization
+#
+# cut=10.0
+#   Nonbonded interaction cutoff = 10 Angstroms
+#   Atoms beyond 10 Angstroms do not interact directly
+#
+# ntpr=100
+#   Print energy information every 100 steps
+#   Used to monitor energy convergence during minimization
+#
+# ntxo=1
+#   Write restart file in ASCII format
+#
+# ntr=1
+#   Turn ON positional restraints
+#   Prevents ligand and backbone from moving during minimization
+#   Critical to keep ligand inside binding pocket
+#
+# restraint_wt=10.0
+#   Restraint force constant = 10 kcal/mol/Angstrom squared
+#   Strong enough to keep ligand and backbone in place
+#   while allowing water molecules and side chains to relax
+#
+# restraintmask='@CA,C,N,O,:703'
+#   Apply restraints to:
+#   @CA,C,N,O = protein backbone atoms (CA carbon, carbonyl C, N, O)
+#   :703       = ligand residue number 703 (LIG)
+#   Together they keep protein backbone AND ligand fixed
+#   preventing ligand escape during minimization
+# -------------------------------------------------------

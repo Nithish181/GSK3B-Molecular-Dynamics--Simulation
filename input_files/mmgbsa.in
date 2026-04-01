@@ -1,0 +1,24 @@
+&general
+  startframe=1,
+  endframe=10000,
+  interval=10,
+  verbose=2,
+  keep_files=0,
+/
+&gb
+  igb=5,
+  saltcon=0.150,
+/
+EOF
+
+
+## Parameter Explanation
+# &general section:
+# startframe=1      start analysis from frame 1
+# endframe=10000    end at frame 10000 (all frames)
+# interval=10       analyze every 10th frame = 1000 frames total analyzed good balance between accuracy and speed 
+# verbose=2         print detailed output for each frame
+# keep_files=0      delete temporary files after calculation
+
+# &gb section: igb=5             GB solvation model 5 (OBC model) most accurate for binding free energy recommended for protein-ligand systems
+# saltcon=0.150     physiological salt concentration 0.15 M NaCl = normal body salt concentration affects electrostatic solvation energy
