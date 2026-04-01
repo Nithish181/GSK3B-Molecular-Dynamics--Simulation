@@ -86,8 +86,8 @@ GSK3B-MD-Simulation/
 **Force fields used:**
 - Protein: `ff19SB`
 - Ligand: `GAFF2` (General Amber Force Field v2)
-- Water: `OPC` (4-point explicit solvent model)
-- Ions: `ionslm_126_opc` (Li/Merz ion parameters for OPC)
+- Water: ` leaprc.water.tip3p` (4-point explicit solvent model)
+
 
 ---
 
