@@ -14,21 +14,9 @@
   restraintmask='@CA,C,N,O | :703',
  /
 
-# -------------------------------------------------------
+
 # PARAMETER EXPLANATION
-# -------------------------------------------------------
-# imin=1
-#   Perform energy minimization (not MD)
-#
-# maxcyc=5000
-#   Maximum 5000 minimization cycles total
-#
-# ncyc=2500
-#   First 2500 cycles use steepest descent method
-#   Steepest descent is robust for removing bad clashes
-#   Remaining 2500 cycles use conjugate gradient method
-#   Conjugate gradient is more efficient near energy minimum
-#
+
 # ntb=1
 #   Periodic boundary conditions at constant volume
 #   Required during minimization before pressure coupling
@@ -72,4 +60,4 @@
 #   :703       = ligand residue number 703 (LIG)
 #   Together they keep protein backbone AND ligand fixed
 #   preventing ligand escape during minimization
-# -------------------------------------------------------
+
